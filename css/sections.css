@@ -10,7 +10,7 @@
     position: relative;
     padding: 4rem var(--container-padding) 2rem;
     overflow: hidden;
-    background-image: url('../assets/images/hero.png');
+    background-image: url('/assets/images/hero.png');
     background-size: auto 70%;
     background-position: right center;
     background-repeat: no-repeat;
@@ -232,13 +232,16 @@
 
 /* =============== CTA SECTION =============== */
 .cta {
-    padding: var(--spacing-3xl) var(--container-padding);
+    padding: var(--spacing-xl) var(--container-padding);
     background-color: var(--color-bg-alt);
     position: relative;
     overflow: visible;
+    background-image: url('/assets/images/descripciondos.png');
+    background-size: 850px auto;
+    background-position: right top;
+    background-repeat: no-repeat;
 }
 
-/* Líneas decorativas verticales */
 .cta::before {
     content: '';
     position: absolute;
@@ -247,18 +250,18 @@
     bottom: 0;
     width: 1px;
     background-color: var(--color-accent);
-    z-index: 1;
+    z-index: 2;
 }
 
 .cta::after {
     content: '';
     position: absolute;
-    right: 10px;
+    left: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    width: 1px;
-    background-color: var(--color-accent);
-    z-index: 1;
+    background: linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(245, 245, 245, 0.98) 45%, rgba(245, 245, 245, 0.6) 75%, rgba(245, 245, 245, 0.2) 100%);
+    z-index: 0;
 }
 
 .cta__container {
@@ -266,13 +269,19 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl);
     align-items: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-2xl) 0;
+    min-height: 320px;
 }
 
 .cta__content {
     max-width: 600px;
+    position: relative;
+    z-index: 1;
 }
 
 .cta__title {
@@ -295,7 +304,7 @@
     background-color: var(--color-accent);
     color: var(--color-primary);
     padding: 0.75rem 2rem;
-    border-radius: 50px;
+    border-radius: 4px;
 }
 
 .cta__badge-text {
@@ -320,15 +329,58 @@
 
 .cta__bottom {
     text-align: center;
-    padding: var(--spacing-xl) 0;
-    border-top: 2px solid var(--color-border);
+    padding: var(--spacing-3xl) var(--container-padding);
+    background-color: var(--color-bg);
+    position: relative;
+    z-index: 1;
+    margin: 0 calc(var(--container-padding) * -1);
+    border-top: 3px solid var(--color-accent);
+}
+
+.cta__bottom::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-accent);
+    z-index: 1;
+}
+
+.cta__bottom::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-accent);
+    z-index: 1;
+}
+
+.cta__bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
 }
 
 .cta__bottom-title {
     font-size: 1.75rem;
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
     color: var(--color-primary);
+}
+
+.cta__bottom-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 0;
 }
 
 .cta__bottom-button {
@@ -337,7 +389,7 @@
     color: var(--color-primary);
     padding: 1rem 2.5rem;
     font-weight: var(--font-weight-semibold);
-    border-radius: 8px;
+    border-radius: 2px;
     transition: var(--transition);
     border: 2px solid var(--color-accent);
 }

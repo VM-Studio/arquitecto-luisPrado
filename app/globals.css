@@ -1,0 +1,98 @@
+/* ===============================================
+   GLOBAL STYLES - Luis Prado Arquitecto
+   =============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* =============== CSS VARIABLES =============== */
+:root {
+    /* Colors - Neutral/Professional palette with beige accents */
+    --color-primary: #1a1a1a;
+    --color-secondary: #2c2c2c;
+    --color-accent: #d4b896; /* Beige accent */
+    --color-beige: #e8dcc8; /* Light beige */
+    --color-beige-dark: #c9a975; /* Dark beige */
+    --color-text: #1a1a1a;
+    --color-text-light: #666666;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f5;
+    --color-border: #e0e0e0;
+    
+    /* Typography */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    
+    /* Container */
+    --container-width: 1280px;
+    --container-padding: 1.5rem;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* =============== RESET =============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Import all component and section styles */
+@import '../css/animations.css';
+@import '../css/components/nav.css';
+@import '../css/components/footer.css';
+@import '../css/sections.css';
+@import '../css/sections/portfolio.css';
+@import '../css/sections/portfolio-page.css';
+@import '../css/sections/sobre-mi-page.css';
+@import '../css/sections/servicios-page.css';
+@import '../css/sections/contacto-page.css';

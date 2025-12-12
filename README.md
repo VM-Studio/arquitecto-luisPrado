@@ -1,273 +1,195 @@
-# Luis Prado Arquitecto - Sitio Web Modular
+# Luis Prado - Sitio Web de Arquitecto
 
-## 📋 Estructura del Proyecto (Modular)
+Sitio web profesional construido con **Next.js 15** y **TypeScript** para Luis Prado, arquitecto con más de 25 años de experiencia en Córdoba, Argentina.
 
-Este proyecto utiliza una **arquitectura modular** con componentes separados, facilitando el mantenimiento y escalabilidad.
+## 🚀 Tecnologías
+
+- **Next.js 15** - Framework de React con App Router
+- **TypeScript** - Tipado estático para mayor seguridad
+- **React 19** - Biblioteca UI moderna
+- **CSS Variables** - Sistema de diseño consistente
+- **Next/Image** - Optimización automática de imágenes
+
+## 📁 Estructura del Proyecto
 
 ```
 arquitecto-luisPrado/
-├── index.html                      # Archivo principal (minimalista)
-│
-├── components/                     # Componentes HTML reutilizables
-│   ├── nav.html                   # Navegación
-│   └── footer.html                # Footer
-│
-├── sections/                       # Secciones HTML del sitio
-│   ├── hero.html                  # Hero section
-│   ├── about.html                 # Sobre mí
-│   ├── services.html              # Servicios
-│   ├── cta.html                   # Call to action
-│   └── contact.html               # Contacto
-│
-├── css/                           # Estilos modulares
-│   ├── styles.css                 # Importa todos los módulos
-│   ├── base.css                   # Variables, reset, base
-│   ├── sections.css               # Estilos de secciones
-│   ├── components/
-│   │   ├── nav.css               # Estilos de navegación
-│   │   └── footer.css            # Estilos de footer
-│   └── sections/                  # (Opcional para más modularización)
-│
-├── js/                            # JavaScript modular (ES6)
-│   ├── main.js                    # Aplicación principal
-│   ├── modules/                   # Módulos funcionales
-│   │   ├── navigation.js         # Lógica de navegación
-│   │   ├── content-renderer.js   # Renderiza contenido dinámico
-│   │   ├── form-handler.js       # Manejo de formularios
-│   │   └── animations.js         # Animaciones y efectos
-│   └── utils/                     # Utilidades
-│       └── component-loader.js   # Carga componentes HTML
-│
-├── data/                          # Datos del sitio
-│   └── site-data.js              # Toda la información centralizada
-│
-└── assets/                        # Recursos estáticos
-    ├── images/                    # Imágenes
-    └── icons/                     # Iconos
+├── app/                      # App Router de Next.js
+│   ├── layout.tsx           # Layout global (Navbar + Footer)
+│   ├── page.tsx             # Página de inicio
+│   ├── globals.css          # Estilos globales
+│   ├── portfolio/           
+│   │   └── page.tsx         # Página de portfolio
+│   └── sobre-mi/            
+│       └── page.tsx         # Página sobre mí
+├── components/              # Componentes React TypeScript
+│   ├── Navbar.tsx           # Navegación principal
+│   ├── Hero.tsx             # Sección hero
+│   ├── About.tsx            # Sección sobre nosotros
+│   ├── Services.tsx         # Sección servicios
+│   ├── CTA.tsx              # Llamado a la acción
+│   ├── Contact.tsx          # Formulario de contacto
+│   └── Footer.tsx           # Pie de página
+├── lib/                     
+│   └── data.ts              # Datos centralizados con tipos
+├── public/                  
+│   └── assets/              
+│       └── images/          # Imágenes del sitio
+├── css/                     # Estilos CSS modulares
+│   ├── components/          # Estilos de componentes
+│   └── sections/            # Estilos de secciones
+├── next.config.js           # Configuración de Next.js
+├── tsconfig.json            # Configuración de TypeScript
+└── package.json             # Dependencias del proyecto
 ```
 
-## 🎯 Ventajas de esta Arquitectura
+## 🛠️ Instalación y Desarrollo
 
-### ✅ **Modularidad**
-- Cada componente está en su propio archivo
-- Fácil de mantener y actualizar
-- Cambios aislados no afectan otros componentes
-
-### ✅ **Escalabilidad**
-- Agregar nuevas secciones es simple
-- Crear nuevos componentes es fácil
-- Estructura preparada para crecer
-
-### ✅ **Mantenimiento**
-- Código organizado y limpio
-- Fácil de encontrar y modificar
-- Separación de responsabilidades
-
-### ✅ **Reutilización**
-- Componentes reutilizables
-- Estilos modulares
-- Funciones compartidas
-
-### ✅ **Datos Centralizados**
-- Todo el contenido en `data/site-data.js`
-- Actualizar información es simple
-- No necesitas tocar HTML
-
-## 🚀 Cómo Usar
-
-### 1. **Ver el Sitio**
-```bash
-# Opción 1: Abrir directamente
-open index.html
-
-# Opción 2: Usar servidor local
-python3 -m http.server 8000
-# Luego ir a: http://localhost:8000
-```
-
-### 2. **Editar Contenido**
-Todo el contenido está en `data/site-data.js`:
-
-```javascript
-// Cambiar texto del hero
-hero: {
-    title: "Tu nuevo título aquí",
-    description: "Tu nueva descripción...",
-    // ...
-}
-```
-
-### 3. **Agregar un Servicio**
-En `data/site-data.js`:
-
-```javascript
-services: [
-    // Servicios existentes...
-    {
-        id: 4,
-        tag: "Nuevo",
-        title: "Mi Nuevo Servicio",
-        image: "assets/images/service4.jpg",
-        items: [
-            "Item 1",
-            "Item 2",
-            "Item 3"
-        ]
-    }
-]
-```
-
-### 4. **Cambiar Colores**
-En `css/base.css`:
-
-```css
-:root {
-    --color-primary: #tu-color;
-    --color-secondary: #tu-color;
-    --color-accent: #tu-color;
-}
-```
-
-### 5. **Crear un Nuevo Componente**
-
-#### Paso 1: Crear HTML
-`components/mi-componente.html`:
-```html
-<div class="mi-componente">
-    <h2 id="miTitulo"></h2>
-</div>
-```
-
-#### Paso 2: Crear CSS
-`css/components/mi-componente.css`:
-```css
-.mi-componente {
-    padding: var(--spacing-xl);
-}
-```
-
-#### Paso 3: Importar CSS
-En `css/styles.css`:
-```css
-@import url('components/mi-componente.css');
-```
-
-#### Paso 4: Cargar Componente
-En `js/main.js`, método `loadComponents()`:
-```javascript
-{ path: 'components/mi-componente.html', target: '#mi-componente-placeholder' }
-```
-
-## 📂 Archivos Principales
-
-### `index.html`
-Archivo minimalista que solo contiene placeholders para componentes.
-
-### `data/site-data.js`
-**Archivo más importante** - Contiene toda la información del sitio:
-- Textos
-- Enlaces
-- Información de contacto
-- Servicios
-- Redes sociales
-
-### `js/main.js`
-Aplicación principal que:
-1. Carga componentes HTML
-2. Renderiza contenido dinámico
-3. Inicializa módulos
-
-### `js/modules/`
-- **navigation.js**: Menú, scroll activo
-- **content-renderer.js**: Renderiza todo el contenido
-- **form-handler.js**: Maneja formulario de contacto
-- **animations.js**: Efectos y animaciones
-
-## 🖼️ Imágenes Necesarias
-
-Coloca estas imágenes en `assets/images/`:
-
-1. **hero-main.jpg** - Imagen principal del hero
-2. **hero-background.jpg** - Fondo del hero
-3. **about-main.jpg** - Sección sobre mí
-4. **service1.jpg** - Proyectos y Construcción
-5. **service2.jpg** - Servicios de Construcción
-6. **service3.jpg** - Servicios Adicionales
-7. **cta-background.jpg** - CTA section
-8. **logo.png** - Logo (opcional)
-
-## 🎨 Personalización Rápida
-
-### Cambiar Información de Contacto
-`data/site-data.js` → `contact`:
-```javascript
-contact: {
-    email: "tu@email.com",
-    phone: "+54 9 XXX XXX XXXX",
-    whatsapp: "549XXXXXXXXXX"
-}
-```
-
-### Cambiar Redes Sociales
-`data/site-data.js` → `social`:
-```javascript
-social: {
-    instagram: "https://instagram.com/tu_usuario",
-    facebook: "https://facebook.com/tu_pagina"
-}
-```
-
-### Cambiar Experiencia
-`data/site-data.js` → raíz:
-```javascript
-experience: "30",  // años
-projectsCompleted: "150"  // obras
-```
-
-## 💻 Tecnologías
-
-- **HTML5** - Estructura semántica
-- **CSS3** - Estilos modulares con @import
-- **JavaScript ES6+** - Módulos nativos
-- **No frameworks** - Vanilla JS puro
-- **No build tools** - Funciona directo en navegador
-
-## 🔧 Comandos Útiles
+### 1. Instalar dependencias
 
 ```bash
-# Iniciar servidor local
-python3 -m http.server 8000
-
-# Ver estructura de archivos
-tree -I 'node_modules'
-
-# Buscar en código
-grep -r "palabra" .
+npm install
 ```
 
-## 📱 Responsive
+### 2. Ejecutar en modo desarrollo
 
-El sitio es completamente responsive:
-- Móviles (< 768px)
-- Tablets (768px - 1024px)
-- Desktop (> 1024px)
+```bash
+npm run dev
+```
 
-## 🎯 Próximos Pasos
+El sitio estará disponible en **[http://localhost:3000](http://localhost:3000)**
 
-1. ✅ Agregar las 7 imágenes necesarias
-2. ✅ Actualizar información en `data/site-data.js`
-3. ✅ Personalizar colores en `css/base.css`
-4. ✅ Probar en todos los dispositivos
-5. ⬜ Deploy en Vercel/Netlify
+### 3. Construir para producción
 
-## 📞 Soporte
+```bash
+npm run build
+```
 
-Si necesitas ayuda:
-1. Revisa `data/site-data.js` para cambiar contenido
-2. Revisa `css/base.css` para cambiar colores
-3. Los componentes están en `components/` y `sections/`
+### 4. Ejecutar en producción
+
+```bash
+npm start
+```
+
+### 5. Lint del código
+
+```bash
+npm run lint
+```
+
+## 📄 Páginas
+
+- **/** - Página de inicio con hero, sobre nosotros, servicios, CTA y contacto
+- **/portfolio** - Galería de proyectos arquitectónicos realizados (6 proyectos)
+- **/sobre-mi** - Información sobre Luis Prado y su experiencia (25+ años)
+
+## 🎨 Personalización
+
+### Modificar contenido
+
+Edita el archivo `lib/data.ts` para cambiar:
+- ✏️ Información de contacto (email, teléfono, WhatsApp)
+- 🔗 Redes sociales (Instagram, Facebook, LinkedIn)
+- 📝 Textos de todas las secciones
+- 🏗️ Proyectos del portfolio
+- 🔧 Servicios ofrecidos
+- 👤 Información de "Sobre Mí"
+
+### Modificar estilos
+
+Los estilos están organizados en:
+- `app/globals.css` - Variables CSS y estilos globales
+- `css/components/` - Estilos de componentes (nav, footer)
+- `css/sections/` - Estilos de secciones (hero, about, services, etc.)
+
+**Paleta de colores:**
+```css
+--color-primary: #1a1a1a        /* Negro principal */
+--color-accent: #d4b896          /* Beige accent */
+--color-beige: #e8dcc8           /* Beige claro */
+--color-beige-dark: #c9a975      /* Beige oscuro */
+```
+
+### Agregar imágenes
+
+1. Coloca las imágenes en `public/assets/images/`
+2. Actualiza las rutas en `lib/data.ts`
+3. Las imágenes se optimizan automáticamente con Next/Image
+
+## 🌐 Despliegue
+
+### Opción 1: Vercel (Recomendado)
+
+1. Conecta tu repositorio a [Vercel](https://vercel.com)
+2. Vercel detectará automáticamente Next.js
+3. ¡Deploy automático en cada push!
+
+### Opción 2: Otras plataformas
+
+Compatible con:
+- Netlify
+- AWS Amplify
+- DigitalOcean App Platform
+- Cualquier plataforma con soporte Node.js
+
+## 📝 Características
+
+✅ **Diseño responsive** - Mobile-first, se adapta a todos los dispositivos  
+✅ **SEO optimizado** - Meta tags, estructura semántica  
+✅ **Carga rápida** - Optimización automática de Next.js  
+✅ **Imágenes optimizadas** - Lazy loading y formatos modernos  
+✅ **TypeScript** - Código type-safe y robusto  
+✅ **Componentes modulares** - Fácil de mantener y extender  
+✅ **Navegación suave** - Client-side routing de Next.js  
+✅ **Formulario funcional** - Validación en cliente  
+✅ **Paleta profesional** - Colores neutrales con acentos beige  
+✅ **CSS Variables** - Sistema de diseño consistente  
+
+## 🎯 Próximas Mejoras
+
+- [ ] Integración con backend para formulario de contacto
+- [ ] Envío de emails con SendGrid o similar
+- [ ] Página individual para cada proyecto del portfolio
+- [ ] Blog de arquitectura con MDX
+- [ ] Galería de imágenes con lightbox
+- [ ] Animaciones y transiciones suaves (Framer Motion)
+- [ ] Modo oscuro
+- [ ] Testimonios de clientes
+- [ ] Google Analytics integration
+- [ ] Sitemap y robots.txt
+
+## � Solución de Problemas
+
+### Los estilos no se cargan
+
+- Asegúrate de que el servidor esté corriendo (`npm run dev`)
+- Verifica que las rutas en `globals.css` apunten a los archivos CSS correctos
+
+### Las imágenes no se muestran
+
+- Verifica que las imágenes estén en `public/assets/images/`
+- Las rutas deben empezar con `/assets/` (no `../assets/`)
+- Reinicia el servidor después de agregar imágenes nuevas
+
+### Errores de TypeScript en el editor
+
+- Cierra y vuelve a abrir VS Code
+- Ejecuta: `npm run build` para verificar errores reales
+- Los errores del editor no afectan la compilación si el servidor funciona
+
+## �📧 Contacto
+
+**Luis Prado - Arquitecto**  
+📧 Email: info@luisprado.com  
+📧 Email obras: obras@luisprado.com  
+📱 Teléfono: +54 9 351 123 4567  
+📍 Ubicación: Córdoba, Argentina
+
+**Experiencia:** 25+ años  
+**Proyectos completados:** 104+
 
 ---
 
-**✨ Arquitectura modular, código limpio, fácil de mantener!**
-# arquitecto-luisPrado
+✨ **Desarrollado con Next.js 15 + TypeScript + React 19**
+
+🎨 **Diseño:** Profesional, responsive y optimizado para SEO
