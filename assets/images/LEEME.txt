@@ -1,0 +1,68 @@
+IMÁGENES NECESARIAS PARA EL SITIO WEB
+========================================
+
+IMPORTANTE: Coloca aquí las siguientes imágenes con estos nombres EXACTOS:
+
+📸 REQUERIDAS (7 imágenes):
+
+1. hero-main.jpg
+   - Tamaño: 800x600px aprox.
+   - Qué es: Foto de Luis Prado o proyecto destacado
+   - Aparece en: Hero section (lado derecho)
+
+2. hero-background.jpg
+   - Tamaño: 1920x1080px
+   - Qué es: Fondo arquitectónico decorativo
+   - Aparece en: Hero section (fondo difuminado)
+
+3. about-main.jpg
+   - Tamaño: 800x600px
+   - Qué es: Imagen que represente profesionalismo
+   - Aparece en: Sección "Tu proyecto es nuestra prioridad"
+
+4. service1.jpg
+   - Tamaño: 800x600px
+   - Qué es: Proyectos y Construcción
+   - Sugerencia: Casa moderna, construcción
+
+5. service2.jpg
+   - Tamaño: 800x600px
+   - Qué es: Servicios de Construcción
+   - Sugerencia: Instalaciones, cañerías
+
+6. service3.jpg
+   - Tamaño: 800x600px
+   - Qué es: Servicios Adicionales
+   - Sugerencia: Cerámicos, acabados
+
+7. cta-background.jpg
+   - Tamaño: 800x600px
+   - Qué es: Proyecto terminado inspirador
+   - Aparece en: Sección CTA
+
+🎨 OPCIONALES:
+
+8. logo.png
+   - Tamaño: 200x200px
+   - Qué es: Logo de Luis Prado
+   - Fondo transparente
+
+9. cert1.png, cert2.png, cert3.png
+   - Tamaño: Auto x 50px altura
+   - Qué es: Certificaciones profesionales
+   - Si no existen, se pueden ocultar
+
+FUENTES RECOMENDADAS:
+- unsplash.com
+- pexels.com
+- pixabay.com
+
+BÚSQUEDAS SUGERIDAS:
+- "construction worker cordoba"
+- "modern architecture"
+- "house construction"
+- "architect blueprints"
+- "ceramic tiles installation"
+- "building interior"
+
+Una vez que coloques las imágenes aquí, abre index.html en tu navegador.

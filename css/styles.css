@@ -1,0 +1,16 @@
+/* ===============================================
+   MAIN STYLES - LUIS PRADO ARQUITECTO
+   Modular CSS Architecture
+   =============================================== */
+
+/* Base Styles */
+@import url('base.css');
+
+/* Components */
+@import url('components/nav.css');
+@import url('components/footer.css');
+
+/* Sections */
+@import url('sections.css');
+@import url('sections/portfolio.css');
+@import url('sections/sobre-mi-page.css');
