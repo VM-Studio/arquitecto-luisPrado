@@ -1,0 +1,230 @@
+/* ===============================================
+   SERVICIOS CATEGORIES PAGE
+   =============================================== */
+
+.servicios-categories {
+  padding: 120px var(--container-padding) 80px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.servicios-categories__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.servicios-categories__header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.servicios-categories__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.servicios-categories__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.servicios-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.servicios-categories__card {
+  background: white;
+  border-radius: 20px;
+  padding: 60px 50px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.servicios-categories__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-beige-dark) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.servicios-categories__card:hover::before {
+  transform: scaleX(1);
+}
+
+.servicios-categories__card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 60px rgba(212, 184, 150, 0.2);
+}
+
+.servicios-categories__card-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.servicios-categories__card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.servicios-categories__card-description {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.servicios-categories__card-count {
+  display: inline-block;
+  background: var(--color-bg-alt);
+  color: var(--color-accent);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 30px;
+}
+
+.servicios-categories__card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.servicios-categories__card:hover .servicios-categories__card-arrow {
+  transform: translateX(10px);
+}
+
+.servicios-categories__card-arrow svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Botón Volver */
+.servicios-page__back {
+  margin-bottom: 40px;
+}
+
+.servicios-page__back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid var(--color-border);
+}
+
+.servicios-page__back-button:hover {
+  color: var(--color-accent);
+  background: var(--color-bg-alt);
+  border-color: var(--color-accent);
+  transform: translateX(-5px);
+}
+
+.servicios-page__back-button svg {
+  transition: transform 0.3s ease;
+}
+
+.servicios-page__back-button:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .servicios-categories {
+    padding: 100px 40px 60px;
+  }
+
+  .servicios-categories__grid {
+    gap: 30px;
+  }
+
+  .servicios-categories__card {
+    padding: 50px 40px;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-categories {
+    padding: 80px 20px 60px;
+  }
+
+  .servicios-categories__header {
+    margin-bottom: 60px;
+  }
+
+  .servicios-categories__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .servicios-categories__card {
+    padding: 40px 30px;
+    min-height: 320px;
+  }
+
+  .servicios-categories__card-title {
+    font-size: 2rem;
+  }
+
+  .servicios-page__back {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicios-categories {
+    padding: 60px 16px 40px;
+  }
+
+  .servicios-categories__card {
+    padding: 32px 24px;
+    min-height: auto;
+  }
+
+  .servicios-categories__card-title {
+    font-size: 1.75rem;
+  }
+
+  .servicios-categories__card-description {
+    font-size: 1rem;
+  }
+}

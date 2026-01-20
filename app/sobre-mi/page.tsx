@@ -17,9 +17,14 @@ export default function SobreMiPage() {
               ))}
             </div>
             
-            <Link href={sobreMi.ctaLink} className="sobre-mi-page__button">
+            <a 
+              href={sobreMi.ctaLink} 
+              className="sobre-mi-page__button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {sobreMi.ctaText}
-            </Link>
+            </a>
           </div>
           
           <div className="sobre-mi-page__image">

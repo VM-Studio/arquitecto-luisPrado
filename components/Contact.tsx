@@ -27,26 +27,8 @@ export default function Contact() {
   return (
     <section className="contact" id="contacto">
       <div className="contact__container">
-        <div className="contact__content">
+        <div className="contact__header">
           <h2 className="contact__title">{contactSection.title}</h2>
-          <p className="contact__description">{contactSection.description}</p>
-          
-          <div className="contact__details">
-            <p className="contact__subtitle">Contacto</p>
-            <a href={`mailto:${contact.email}`} className="contact__link">
-              {contact.email}
-            </a>
-            <a href={`mailto:${contact.emailSecondary}`} className="contact__link">
-              {contact.emailSecondary}
-            </a>
-            <a href={`tel:${contact.phone}`} className="contact__link">
-              {contact.phone}
-            </a>
-          </div>
-
-          <a href={`https://wa.me/${contact.whatsapp}`} className="contact__cta-button" target="_blank" rel="noopener noreferrer">
-            {contactSection.ctaText}
-          </a>
         </div>
 
         <form className="contact__form" onSubmit={handleSubmit}>

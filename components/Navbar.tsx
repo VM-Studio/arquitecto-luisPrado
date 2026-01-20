@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { siteData, NavItem } from '@/lib/data'
 
@@ -11,7 +12,13 @@ export default function Navbar() {
     <nav className="nav">
       <div className="nav__container">
         <Link href="/" className="nav__logo">
-          <span className="nav__logo-icon">📐</span>
+          <Image 
+            src="/assets/images/luislogo.png" 
+            alt="Luis Prado Arquitecto" 
+            width={150} 
+            height={50}
+            priority
+          />
         </Link>
 
         <button

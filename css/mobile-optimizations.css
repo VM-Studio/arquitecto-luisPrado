@@ -109,12 +109,6 @@ textarea {
 
 /* Mejoras de performance para móviles */
 @media (max-width: 768px) {
-    /* Reducir animaciones complejas en móviles */
-    * {
-        animation-duration: 0.3s !important;
-        transition-duration: 0.3s !important;
-    }
-
     /* Optimizar imágenes para carga rápida */
     img {
         image-rendering: -webkit-optimize-contrast;

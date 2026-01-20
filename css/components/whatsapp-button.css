@@ -36,22 +36,6 @@
     object-fit: contain;
 }
 
-/* Animación de entrada */
-@keyframes slideInFromBottom {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.whatsapp-float-button {
-    animation: slideInFromBottom 0.5s ease-out 0.5s both;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .whatsapp-float-button {

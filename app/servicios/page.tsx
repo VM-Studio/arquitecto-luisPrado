@@ -8,50 +8,39 @@ export default function ServiciosPage() {
 
   return (
     <main>
-      <section className="servicios-page">
-        <div className="servicios-page__container">
-          <div className="servicios-page__header">
-            <h1 className="servicios-page__title">{servicesSection.title}</h1>
-            <p className="servicios-page__subtitle">
-              Ofrecemos soluciones integrales de arquitectura y construcción, adaptadas a las necesidades específicas de cada proyecto en Córdoba
+      <section className="servicios-categories">
+        <div className="servicios-categories__container">
+          <div className="servicios-categories__header">
+            <h1 className="servicios-categories__title">Servicios de Arquitectura y Construcción</h1>
+            <p className="servicios-categories__subtitle">
+              Ofrecemos soluciones integrales adaptadas a las necesidades específicas de cada proyecto en Córdoba
             </p>
           </div>
 
-          {serviceCategories.map((category: ServiceCategory) => (
-            <div key={category.id} className="servicios-page__category">
-              <div className="servicios-page__category-header">
-                <h2 className="servicios-page__category-title">{category.title}</h2>
-                <p className="servicios-page__category-description">
-                  {category.description}
-                </p>
-              </div>
-
-              <div className="servicios-page__services-grid">
-                {category.services.map((service) => (
-                  <Link
-                    key={service.id}
-                    href={`/servicios/${service.slug}`}
-                    className="servicios-page__service-card"
-                  >
-                    <div className="servicios-page__service-image">
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                      />
-                    </div>
-                    <div className="servicios-page__service-content">
-                      <h3 className="servicios-page__service-title">
-                        {service.name}
-                      </h3>
-                      <p className="servicios-page__service-link">
-                        Ver más información
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="servicios-categories__grid">
+            {serviceCategories.map((category: ServiceCategory) => (
+              <Link
+                key={category.id}
+                href={`/servicios/categoria/${category.title.toLowerCase()}`}
+                className="servicios-categories__card"
+              >
+                <div className="servicios-categories__card-content">
+                  <h2 className="servicios-categories__card-title">{category.title}</h2>
+                  <p className="servicios-categories__card-description">
+                    {category.description}
+                  </p>
+                  <div className="servicios-categories__card-count">
+                    {category.services.length} servicios disponibles
+                  </div>
+                  <div className="servicios-categories__card-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
 
           <div className="servicios-page__cta">
             <h2 className="servicios-page__cta-title">
@@ -60,9 +49,14 @@ export default function ServiciosPage() {
             <p className="servicios-page__cta-description">
               Contáctame hoy para una consulta gratuita y convirtamos tu visión en realidad. Con más de 25 años de experiencia, te acompañaré en cada paso del camino.
             </p>
-            <Link href="/contacto" className="servicios-page__cta-button">
+            <a 
+              href={`https://wa.me/${siteData.contact.whatsapp.replace(/\D/g, '')}`}
+              className="servicios-page__cta-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Solicitar Consulta Gratuita
-            </Link>
+            </a>
           </div>
         </div>
       </section>

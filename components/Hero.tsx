@@ -10,9 +10,14 @@ export default function Hero() {
         <div className="hero__content">
           <h1 className="hero__title">{hero.title}</h1>
           <p className="hero__description">{hero.description}</p>
-          <Link href={hero.ctaLink} className="hero__button">
+          <a 
+            href={hero.ctaLink} 
+            className="hero__button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {hero.ctaText}
-          </Link>
+          </a>
         </div>
       </div>
     </section>

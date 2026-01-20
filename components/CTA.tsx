@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { siteData } from '@/lib/data'
 
 export default function CTA() {
@@ -13,16 +12,6 @@ export default function CTA() {
           <div className="cta__badge">
             <span className="cta__badge-text">{cta.badge}</span>
           </div>
-        </div>
-      </div>
-      
-      <div className="cta__bottom">
-        <div className="cta__bottom-content">
-          <h3 className="cta__bottom-title">{cta.bottomTitle}</h3>
-          <p className="cta__bottom-subtitle">{cta.description}</p>
-          <Link href={cta.ctaLink} className="cta__bottom-button">
-            {cta.ctaText}
-          </Link>
         </div>
       </div>
     </section>

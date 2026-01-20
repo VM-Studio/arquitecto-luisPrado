@@ -165,7 +165,7 @@ export const siteData: SiteData = {
     title: "Hacemos realidad tus proyectos arquitectónicos",
     description: "Construcción profesional con más de 25 años de experiencia y +104 obras ejecutadas en tiempo y forma en Córdoba.",
     ctaText: "Contáctame",
-    ctaLink: "/contacto",
+    ctaLink: "https://wa.me/5493511234567",
     mainImage: "/assets/images/hero.png",
     backgroundImage: "/assets/images/hero.png"
   },
@@ -555,7 +555,7 @@ export const siteData: SiteData = {
     image: "/assets/images/cta-background.jpg",
     bottomTitle: "Llevemos al éxito tu proyecto",
     ctaText: "Contáctame",
-    ctaLink: "/contacto"
+    ctaLink: "https://wa.me/5493511234567"
   },
   
   contactSection: {
@@ -592,7 +592,7 @@ export const siteData: SiteData = {
     ],
     image: "/assets/images/sobre-mi.jpg",
     ctaText: "Hablemos de tu Proyecto",
-    ctaLink: "/contacto"
+    ctaLink: "https://wa.me/5493511234567"
   },
 
   portfolio: [
