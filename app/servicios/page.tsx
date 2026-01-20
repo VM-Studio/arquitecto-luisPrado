@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { siteData, Service } from '@/lib/data'
+import { siteData, ServiceCategory } from '@/lib/data'
 
 export default function ServiciosPage() {
-  const { servicesSection, services } = siteData
+  const { servicesSection, serviceCategories } = siteData
 
   return (
     <main>
@@ -17,27 +17,41 @@ export default function ServiciosPage() {
             </p>
           </div>
 
-          <div className="services__grid">
-            {services.map((service: Service) => (
-              <article key={service.id} className="service-card">
-                <div className="service-card__image">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                  />
-                </div>
-                <div className="service-card__content">
-                  <span className="service-card__tag">{service.tag}</span>
-                  <h3 className="service-card__title">{service.title}</h3>
-                  <ul className="service-card__list">
-                    {service.items.map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
+          {serviceCategories.map((category: ServiceCategory) => (
+            <div key={category.id} className="servicios-page__category">
+              <div className="servicios-page__category-header">
+                <h2 className="servicios-page__category-title">{category.title}</h2>
+                <p className="servicios-page__category-description">
+                  {category.description}
+                </p>
+              </div>
+
+              <div className="servicios-page__services-grid">
+                {category.services.map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/servicios/${service.slug}`}
+                    className="servicios-page__service-card"
+                  >
+                    <div className="servicios-page__service-image">
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                      />
+                    </div>
+                    <div className="servicios-page__service-content">
+                      <h3 className="servicios-page__service-title">
+                        {service.name}
+                      </h3>
+                      <p className="servicios-page__service-link">
+                        Ver más información
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
 
           <div className="servicios-page__cta">
             <h2 className="servicios-page__cta-title">

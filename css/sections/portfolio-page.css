@@ -13,11 +13,11 @@
 }
 
 .portfolio-header__title {
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
     color: var(--color-primary);
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: -1px;
 }
 
@@ -69,11 +69,11 @@
 }
 
 .portfolio-featured__title {
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
-    font-family: 'Montserrat', sans-serif;
     line-height: 1.2;
 }
 
@@ -219,12 +219,12 @@
 }
 
 .portfolio-card__title {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
     line-height: 1.3;
     margin: 0 0 var(--spacing-xs) 0;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .portfolio-card__location {

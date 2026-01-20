@@ -17,7 +17,8 @@
     --color-border: #e0e0e0;
     
     /* Typography */
-    --font-primary: 'Montserrat', sans-serif;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
@@ -84,7 +85,95 @@ button {
     font-family: inherit;
 }
 
+/* =============== TYPOGRAPHY =============== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: var(--font-weight-extrabold);
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
 /* =============== UTILITIES =============== */
 .show {
     right: 0 !important;
+}
+
+/* =============== RESPONSIVE TYPOGRAPHY =============== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.35rem;
+    }
+
+    h5 {
+        font-size: 1.15rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
 }

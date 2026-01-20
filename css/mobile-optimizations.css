@@ -1,0 +1,208 @@
+/* ===============================================
+   MOBILE OPTIMIZATIONS
+   =============================================== */
+
+/* Prevenir selección de texto accidental en elementos interactivos */
+button,
+a,
+.nav__link,
+.service-card,
+.portfolio-card,
+.cta__button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+/* Permitir selección de texto en contenido */
+p,
+h1, h2, h3, h4, h5, h6,
+.about__description,
+.service-card__description {
+    user-select: text;
+}
+
+/* Mejoras táctiles para móviles */
+@media (hover: none) and (pointer: coarse) {
+    /* Área de toque más grande para botones */
+    button,
+    a,
+    .nav__link,
+    .service-card,
+    .portfolio-card {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remover hover effects en dispositivos táctiles */
+    .service-card:hover,
+    .portfolio-card:hover,
+    .cta__button:hover {
+        transform: none;
+    }
+
+    /* Active states para feedback táctil */
+    .service-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+
+    button:active,
+    a:active,
+    .nav__link:active {
+        opacity: 0.7;
+        transition: opacity 0.1s;
+    }
+}
+
+/* Prevenir zoom accidental en inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    font-size: 16px !important; /* iOS no hace zoom si el font-size es 16px o mayor */
+}
+
+/* Optimización de fuentes para pantallas pequeñas */
+@media (max-width: 375px) {
+    :root {
+        --container-padding: 1rem;
+        --spacing-xs: 0.375rem;
+        --spacing-sm: 0.75rem;
+        --spacing-md: 1.125rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2.25rem;
+        --spacing-2xl: 3rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Optimización para tablets en portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .hero,
+    .about,
+    .services,
+    .cta,
+    .contact {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Optimización para tablets en landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mejoras de performance para móviles */
+@media (max-width: 768px) {
+    /* Reducir animaciones complejas en móviles */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.3s !important;
+    }
+
+    /* Optimizar imágenes para carga rápida */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Safe area para dispositivos con notch */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+
+    .nav {
+        padding-left: max(var(--container-padding), env(safe-area-inset-left));
+        padding-right: max(var(--container-padding), env(safe-area-inset-right));
+    }
+
+    .whatsapp-float-button {
+        right: max(30px, env(safe-area-inset-right));
+        bottom: max(30px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Landscape mode para móviles pequeños */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .nav {
+        padding: 12px var(--container-padding);
+    }
+
+    .whatsapp-float-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Optimización para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    :root {
+        --container-padding: 0.875rem;
+    }
+
+    .hero__title,
+    .about__title,
+    .services__title,
+    .contact__title {
+        font-size: 1.75rem !important;
+    }
+
+    .service-card__title {
+        font-size: 1.125rem;
+    }
+
+    .hero__button,
+    .cta__button {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch-friendly spacing */
+@media (max-width: 768px) {
+    .nav__list {
+        gap: 1.5rem;
+    }
+
+    .services__grid {
+        gap: 1.5rem;
+    }
+
+    /* Espaciado mejorado para formularios */
+    .contact__form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact__input,
+    .contact__textarea {
+        padding: 16px;
+    }
+}

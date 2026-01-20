@@ -44,6 +44,7 @@
 }
 
 .hero__title {
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: var(--font-weight-extrabold);
     line-height: 1.1;
@@ -118,6 +119,7 @@
 }
 
 .about__title {
+    font-family: var(--font-heading);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
@@ -142,6 +144,7 @@
 }
 
 .services__title {
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
@@ -173,6 +176,10 @@
     position: relative;
     height: 300px;
     overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card__image img {
@@ -180,10 +187,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    padding: 0;
 }
 
 .service-card:hover .service-card__image img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .service-card__content {
@@ -204,6 +212,7 @@
 }
 
 .service-card__title {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
@@ -285,6 +294,7 @@
 }
 
 .cta__title {
+    font-family: var(--font-heading);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: var(--font-weight-bold);
     line-height: 1.3;
@@ -419,6 +429,7 @@
 }
 
 .contact__title {
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
@@ -575,5 +586,142 @@
     .cta::after {
         right: 5px;
         left: auto;
+    }
+}
+
+/* ============ RESPONSIVE - TABLETS ============ */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 120px var(--container-padding) 80px;
+    }
+
+    .about__container {
+        gap: var(--spacing-2xl);
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .service-card__image {
+        height: 250px;
+    }
+}
+
+/* ============ RESPONSIVE - MOBILE ============ */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px var(--container-padding) 60px;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .hero__button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about {
+        padding: var(--spacing-2xl) var(--container-padding);
+    }
+
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .services {
+        padding: var(--spacing-2xl) var(--container-padding);
+    }
+
+    .services__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .service-card__image {
+        height: 220px;
+    }
+
+    .service-card__content {
+        padding: var(--spacing-lg);
+    }
+
+    .cta {
+        padding: var(--spacing-2xl) var(--container-padding);
+    }
+
+    .cta__content {
+        max-width: 100%;
+    }
+
+    .cta__buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .cta__button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact {
+        padding: var(--spacing-2xl) var(--container-padding);
+    }
+
+    .contact__container {
+        gap: var(--spacing-xl);
+    }
+
+    .contact__form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============ RESPONSIVE - SMALL MOBILE ============ */
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 20px 40px;
+    }
+
+    .about {
+        padding: var(--spacing-xl) 20px;
+    }
+
+    .services {
+        padding: var(--spacing-xl) 20px;
+    }
+
+    .service-card__image {
+        height: 200px;
+    }
+
+    .service-card__content {
+        padding: var(--spacing-md);
+    }
+
+    .service-card__title {
+        font-size: 1.25rem;
+    }
+
+    .cta {
+        padding: var(--spacing-xl) 20px;
+    }
+
+    .contact {
+        padding: var(--spacing-xl) 20px;
+    }
+
+    .contact__input,
+    .contact__textarea {
+        font-size: 16px; /* Evita zoom en iOS */
     }
 }
