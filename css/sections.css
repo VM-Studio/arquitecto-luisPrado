@@ -61,21 +61,22 @@
 .hero__button {
     display: inline-block;
     background-color: var(--color-accent);
-    color: var(--color-primary);
+    color: #ffffff;
     padding: 0.875rem 2rem;
     font-weight: var(--font-weight-semibold);
-    border-radius: 4px;
+    border-radius: 0;
     transition: var(--transition);
     border: 2px solid var(--color-accent);
     width: 100%;
     max-width: 300px;
     text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .hero__button:hover {
     background-color: var(--color-beige-dark);
     border-color: var(--color-beige-dark);
-    color: var(--color-primary);
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(212, 184, 150, 0.4);
 }
@@ -699,7 +700,7 @@
 
 .form__submit {
     background-color: var(--color-accent);
-    color: var(--color-primary);
+    color: #ffffff;
     padding: 1rem 2rem;
     font-weight: var(--font-weight-semibold);
     border-radius: 0;
@@ -708,12 +709,13 @@
     font-size: 1rem;
     border: 2px solid var(--color-accent);
     width: 100%;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .form__submit:hover {
     background-color: var(--color-beige-dark);
     border-color: var(--color-beige-dark);
-    color: var(--color-primary);
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(212, 184, 150, 0.4);
 }

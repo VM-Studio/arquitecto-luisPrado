@@ -75,6 +75,7 @@
     border-radius: 0;
     border: 2px solid var(--color-accent);
     font-size: 0.875rem;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .nav__link--cta::after {

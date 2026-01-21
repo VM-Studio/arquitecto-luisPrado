@@ -200,6 +200,7 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .servicios-page__cta-button:hover {
