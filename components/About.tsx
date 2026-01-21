@@ -17,11 +17,19 @@ export default function About() {
   ]
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length)
+    setCurrentImage((prev) => {
+      const next = (prev + 1) % images.length
+      console.log('Next image:', next)
+      return next
+    })
   }
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+    setCurrentImage((prev) => {
+      const previous = (prev - 1 + images.length) % images.length
+      console.log('Previous image:', previous)
+      return previous
+    })
   }
 
   return (
@@ -34,6 +42,7 @@ export default function About() {
         
         <div className="about__carousel">
           <button 
+            type="button"
             className="about__carousel-btn about__carousel-btn--prev" 
             onClick={prevImage}
             aria-label="Imagen anterior"
@@ -50,22 +59,13 @@ export default function About() {
             />
           </div>
           <button 
+            type="button"
             className="about__carousel-btn about__carousel-btn--next" 
             onClick={nextImage}
             aria-label="Siguiente imagen"
           >
             →
           </button>
-          <div className="about__carousel-dots">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`about__carousel-dot ${index === currentImage ? 'about__carousel-dot--active' : ''}`}
-                onClick={() => setCurrentImage(index)}
-                aria-label={`Ir a imagen ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </section>

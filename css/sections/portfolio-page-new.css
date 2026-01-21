@@ -1,0 +1,328 @@
+/* ===============================================
+   PORTFOLIO PAGE - DISEÑO MINIMALISTA MODERNO
+   =============================================== */
+
+.portfolio-page {
+  width: 100%;
+  background: white;
+}
+
+/* ============ HERO SECTION ============ */
+.portfolio-hero {
+  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Patrón de fondo */
+.portfolio-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(30deg, transparent 48%, rgba(212, 184, 150, 0.08) 50%, transparent 52%),
+    linear-gradient(150deg, transparent 48%, rgba(212, 184, 150, 0.08) 50%, transparent 52%);
+  background-size: 60px 60px;
+}
+
+.portfolio-hero__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-hero__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.portfolio-hero__description {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ============ STATS SECTION ============ */
+.portfolio-stats {
+  padding: 60px 20px;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.portfolio-stats__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  text-align: center;
+}
+
+.portfolio-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio-stats__number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 600;
+  color: #c9a87c;
+  line-height: 1;
+}
+
+.portfolio-stats__label {
+  font-size: 0.8125rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* ============ PROJECTS SECTION ============ */
+.portfolio-projects {
+  padding: 80px 20px;
+  background: white;
+}
+
+.portfolio-projects__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-projects__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 60px;
+  color: #1a1a1a;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.portfolio-projects__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a87c 0%, #d4b896 100%);
+}
+
+/* ============ PROJECTS GRID ============ */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+/* Item de proyecto */
+.portfolio-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: white;
+  overflow: hidden;
+}
+
+/* Primer proyecto destacado */
+.portfolio-item--featured {
+  grid-column: 1 / -1;
+}
+
+.portfolio-item__image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.portfolio-item--featured .portfolio-item__image {
+  height: 400px;
+}
+
+.portfolio-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-item__image img {
+  transform: scale(1.05);
+}
+
+.portfolio-item__category {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-item__content {
+  padding: 24px 0;
+}
+
+.portfolio-item__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.portfolio-item--featured .portfolio-item__title {
+  font-size: 1.75rem;
+}
+
+.portfolio-item__location {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.portfolio-item__specs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.portfolio-item__spec {
+  font-size: 0.8125rem;
+  color: #999;
+  padding: 6px 12px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+/* ============ CTA SECTION ============ */
+.portfolio-cta {
+  padding: 80px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.portfolio-cta__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.portfolio-cta__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-cta__description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.portfolio-cta__button {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  border: 2px solid #1a1a1a;
+  border-radius: 0;
+}
+
+.portfolio-cta__button:hover {
+  background: white;
+  color: #1a1a1a;
+}
+
+/* ============ TABLET (768px+) ============ */
+@media (min-width: 768px) {
+  .portfolio-hero {
+    padding: 100px 40px 80px;
+  }
+
+  .portfolio-stats__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+
+  .portfolio-projects {
+    padding: 100px 40px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .portfolio-item__image {
+    height: 320px;
+  }
+
+  .portfolio-item--featured {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+  }
+
+  .portfolio-item--featured .portfolio-item__image {
+    height: 100%;
+    min-height: 450px;
+  }
+
+  .portfolio-item--featured .portfolio-item__content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f8f8f8;
+  }
+
+  .portfolio-cta {
+    padding: 100px 40px;
+  }
+}
+
+/* ============ DESKTOP (1024px+) ============ */
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio-item--featured {
+    grid-column: 1 / -1;
+  }
+
+  .portfolio-item__image {
+    height: 340px;
+  }
+}

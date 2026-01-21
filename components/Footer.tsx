@@ -20,10 +20,6 @@ export default function Footer() {
           {/* About Section */}
           <div className="footer__section footer__about">
             <h3 className="footer__section-title">{siteData.name}</h3>
-            <p className="footer__description">
-              Más de 25 años de experiencia en arquitectura y construcción en Córdoba. 
-              Transformamos espacios con profesionalismo, calidad y dedicación.
-            </p>
             <div className="footer__contact-info">
               <a href={`mailto:${contact.email}`} className="footer__contact-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -149,14 +145,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <a 
-              href={`https://wa.me/${contact.whatsapp.replace(/\D/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer__cta-button"
-            >
-              Consulta Gratuita
-            </a>
           </div>
         </div>
 

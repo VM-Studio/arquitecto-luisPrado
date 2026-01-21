@@ -2,86 +2,83 @@ import { siteData, PortfolioProject } from '@/lib/data'
 
 export default function PortfolioPage() {
   const { portfolio } = siteData
-  const [featuredProject, ...otherProjects] = portfolio
 
   return (
     <main className="portfolio-page">
-      <section className="portfolio-header">
-        <div className="portfolio-header__container">
-          <h1 className="portfolio-header__title">Portfolio</h1>
-          <p className="portfolio-header__description">
-            Proyectos arquitectónicos realizados en Córdoba
+      {/* Hero Section */}
+      <section className="portfolio-hero">
+        <div className="portfolio-hero__container">
+          <h1 className="portfolio-hero__title">Portfolio</h1>
+          <p className="portfolio-hero__description">
+            Más de 104 proyectos ejecutados en Córdoba
           </p>
         </div>
       </section>
 
-      {/* Featured Project */}
-      <section className="portfolio-featured-section">
-        <div className="portfolio-featured-section__container">
-          <article className="portfolio-featured">
-            <div className="portfolio-featured__image">
-              <img
-                src={featuredProject.image}
-                alt={featuredProject.title}
-              />
-            </div>
-            <div className="portfolio-featured__content">
-              <h2 className="portfolio-featured__title">{featuredProject.title}</h2>
-              <p className="portfolio-featured__subtitle">{featuredProject.description}</p>
-              <button className="portfolio-featured__button">Contáctame</button>
-            </div>
-          </article>
-          
-          {/* Small Cards Below Featured */}
-          <div className="portfolio-featured__grid">
-            <div className="portfolio-featured__card">
-              <img src={featuredProject.image} alt="Gallery 1" />
-            </div>
-            <div className="portfolio-featured__card">
-              <img src={featuredProject.image} alt="Gallery 2" />
-            </div>
-            <div className="portfolio-featured__card">
-              <img src={featuredProject.image} alt="Gallery 3" />
-            </div>
+      {/* Stats Section */}
+      <section className="portfolio-stats">
+        <div className="portfolio-stats__container">
+          <div className="portfolio-stats__item">
+            <span className="portfolio-stats__number">+104</span>
+            <span className="portfolio-stats__label">Obras Ejecutadas</span>
+          </div>
+          <div className="portfolio-stats__item">
+            <span className="portfolio-stats__number">+25</span>
+            <span className="portfolio-stats__label">Años de Experiencia</span>
+          </div>
+          <div className="portfolio-stats__item">
+            <span className="portfolio-stats__number">100%</span>
+            <span className="portfolio-stats__label">Clientes Satisfechos</span>
           </div>
         </div>
       </section>
 
-      <section className="portfolio-grid-section">
-        <div className="portfolio-grid-section__container">
+      {/* Projects Grid */}
+      <section className="portfolio-projects">
+        <div className="portfolio-projects__container">
+          <h2 className="portfolio-projects__title">Proyectos Destacados</h2>
           <div className="portfolio-grid">
-            {otherProjects.map((project: PortfolioProject) => (
-              <article key={project.id} className="portfolio-card">
-                <div className="portfolio-card__image">
+            {portfolio.map((project: PortfolioProject, index: number) => (
+              <article key={project.id} className={`portfolio-item ${index === 0 ? 'portfolio-item--featured' : ''}`}>
+                <div className="portfolio-item__image">
                   <img
                     src={project.image}
                     alt={project.title}
                   />
-                  <div className="portfolio-card__overlay">
-                    <span className="portfolio-card__category">{project.category}</span>
-                  </div>
+                  <div className="portfolio-item__category">{project.category}</div>
                 </div>
-                <div className="portfolio-card__content">
-                  <h3 className="portfolio-card__title">{project.title}</h3>
-                  <p className="portfolio-card__location">{project.location}</p>
-                  <p className="portfolio-card__description">{project.description}</p>
-                  <div className="portfolio-card__specs">
+                <div className="portfolio-item__content">
+                  <h3 className="portfolio-item__title">{project.title}</h3>
+                  <p className="portfolio-item__location">{project.location}</p>
+                  <div className="portfolio-item__specs">
                     {project.specs.rooms && (
-                      <span className="portfolio-card__spec">
-                        <span className="portfolio-card__spec-label">Ambientes:</span> {project.specs.rooms}
-                      </span>
+                      <span className="portfolio-item__spec">{project.specs.rooms} amb</span>
                     )}
-                    <span className="portfolio-card__spec">
-                      <span className="portfolio-card__spec-label">Área:</span> {project.specs.area}
-                    </span>
-                    <span className="portfolio-card__spec">
-                      <span className="portfolio-card__spec-label">Año:</span> {project.specs.year}
-                    </span>
+                    <span className="portfolio-item__spec">{project.specs.area}</span>
+                    <span className="portfolio-item__spec">{project.specs.year}</span>
                   </div>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="portfolio-cta">
+        <div className="portfolio-cta__container">
+          <h2 className="portfolio-cta__title">¿Tenés un proyecto en mente?</h2>
+          <p className="portfolio-cta__description">
+            Contactame para una consulta gratuita
+          </p>
+          <a 
+            href={`https://wa.me/${siteData.contact.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portfolio-cta__button"
+          >
+            Contactar por WhatsApp
+          </a>
         </div>
       </section>
     </main>

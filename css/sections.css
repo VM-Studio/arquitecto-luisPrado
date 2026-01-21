@@ -42,7 +42,7 @@
 }
 
 .hero__title {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(1.75rem, 6vw, 3.5rem);
     font-weight: 700;
     line-height: 1.2;
@@ -107,7 +107,7 @@
 }
 
 .about__title {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(1.75rem, 6vw, 2.5rem);
     font-weight: 700;
     line-height: 1.2;
@@ -186,33 +186,19 @@
 }
 
 .about__carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
+    display: none;
 }
 
 .about__carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
+    display: none;
 }
 
 .about__carousel-dot:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
 }
 
 .about__carousel-dot--active {
-    background-color: var(--color-accent);
-    width: 32px;
-    border-radius: 6px;
+    display: none;
 }
 
 /* =============== SERVICES SECTION =============== */
@@ -226,7 +212,7 @@
 }
 
 .services__title {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(1.75rem, 6vw, 3rem);
     font-weight: 700;
     color: var(--color-primary);
@@ -238,7 +224,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 /* Service Card */
@@ -248,6 +234,10 @@
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -257,7 +247,7 @@
 
 .service-card__image {
     position: relative;
-    height: 300px;
+    height: 220px;
     overflow: hidden;
     background: #ffffff;
     display: flex;
@@ -290,40 +280,32 @@
 }
 
 .service-card__content {
-    padding: var(--spacing-xl);
+    padding: 1.5rem;
 }
 
 .service-card__tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-primary);
-    background-color: var(--color-beige);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    margin-bottom: var(--spacing-sm);
+    display: none;
 }
 
 .service-card__title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
     color: var(--color-primary);
 }
 
 .service-card__list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 0.5rem;
 }
 
 .service-card__list li {
     position: relative;
     padding-left: 1.5rem;
     color: var(--color-text-light);
+    font-size: 0.9rem;
 }
 
 .service-card__list li::before {
@@ -399,7 +381,7 @@
     background-color: var(--color-accent);
     color: var(--color-primary);
     padding: 0.75rem 2rem;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .cta__badge-text {
@@ -407,6 +389,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.875rem;
+    font-family: var(--font-heading);
 }
 
 /* Carousel Styles */
@@ -597,13 +580,16 @@
 }
 
 .contact__container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1.5rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact__header {
@@ -611,7 +597,7 @@
 }
 
 .contact__title {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: 0;
@@ -669,17 +655,19 @@
 /* Contact Form */
 .contact__form {
     background-color: #ffffff;
-    padding: var(--spacing-xl);
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
 }
 
 .form__group {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .form__group--full {
@@ -687,13 +675,15 @@
 }
 
 .form__input {
-    padding: 1rem;
+    padding: 0.875rem;
     border: 2px solid var(--color-border);
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 16px;
     transition: var(--transition);
     background-color: var(--color-bg);
     color: var(--color-text);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form__input:focus {
@@ -704,6 +694,7 @@
 .form__textarea {
     resize: vertical;
     min-height: 120px;
+    font-family: inherit;
 }
 
 .form__submit {
@@ -711,11 +702,12 @@
     color: var(--color-primary);
     padding: 1rem 2rem;
     font-weight: var(--font-weight-semibold);
-    border-radius: 8px;
+    border-radius: 0;
     cursor: pointer;
     transition: var(--transition);
     font-size: 1rem;
     border: 2px solid var(--color-accent);
+    width: 100%;
 }
 
 .form__submit:hover {
@@ -775,7 +767,16 @@
     .services__grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 2.5rem;
+        max-width: 900px;
+    }
+    
+    .service-card__image {
+        height: 240px;
+    }
+    
+    .service-card__content {
+        padding: 2rem;
     }
 
     /* CTA */
@@ -806,23 +807,38 @@
         padding: 3rem 2rem;
     }
     
+    .contact__container {
+        padding: 0 2rem;
+    }
+    
     .contact__form {
         grid-template-columns: repeat(2, 1fr);
+        padding: 2rem;
+        gap: 1.5rem;
     }
 }
 
 /* Desktop - 1024px and up */
 @media screen and (min-width: 1024px) {
-    .services__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
     .hero {
         min-height: 45vh;
     }
     
     .about {
         padding: 5rem 2rem;
+    }
+    
+    .services {
+        padding: 5rem 2rem;
+    }
+    
+    .services__grid {
+        gap: 3rem;
+        max-width: 950px;
+    }
+    
+    .service-card__image {
+        height: 260px;
     }
 }
 /* =============== MOBILE OPTIMIZATIONS =============== */

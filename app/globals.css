@@ -87,13 +87,14 @@ button {
 }
 
 /* Import all component and section styles */
+@import '../css/base.css';
 @import '../css/animations.css';
 @import '../css/components/nav.css';
 @import '../css/components/footer.css';
 @import '../css/components/whatsapp-button.css';
 @import '../css/sections.css';
 @import '../css/sections/portfolio.css';
-@import '../css/sections/portfolio-page.css';
+@import '../css/sections/portfolio-page-new.css';
 @import '../css/sections/sobre-mi-page.css';
 @import '../css/sections/servicios-page.css';
 @import '../css/sections/servicios-categories.css';

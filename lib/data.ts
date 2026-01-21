@@ -177,43 +177,31 @@ export const siteData: SiteData = {
   },
   
   servicesSection: {
-    title: "Servicios de Arquitectura y Construcción"
+    title: "Nuestros servicios"
   },
   
   services: [
     {
       id: 1,
-      tag: "Principal",
-      title: "Proyectos y Construcción",
+      tag: "Arquitectura",
+      title: "Servicios de Arquitectura",
       image: "/assets/images/proyecto1.png",
       items: [
         "Proyectos arquitectónicos completos",
-        "Construcción de viviendas",
-        "Locales comerciales",
-        "Ampliaciones y refacciones"
+        "Diseño y planificación",
+        "Planos y documentación técnica",
+        "Asesoramiento profesional"
       ]
     },
     {
       id: 2,
-      tag: "Especializado",
+      tag: "Construcción",
       title: "Servicios de Construcción",
       image: "/assets/images/proyecto2.png",
       items: [
-        "Cambio de pisos y revestimientos",
-        "Instalaciones de cañerías",
-        "Instalaciones sanitarias",
-        "Instalaciones eléctricas"
-      ]
-    },
-    {
-      id: 3,
-      tag: "Complementario",
-      title: "Servicios Adicionales",
-      image: "/assets/images/proyecto3.png",
-      items: [
-        "Instalación de cloacas",
-        "Instalación de agua",
-        "Colocación de cerámicos",
+        "Construcción de viviendas",
+        "Ampliaciones y refacciones",
+        "Locales comerciales",
         "Acabados y terminaciones"
       ]
     }
@@ -253,7 +241,7 @@ export const siteData: SiteData = {
             "Presupuesto sin costo",
             "Garantía en todos los trabajos"
           ],
-          image: "/assets/images/servicios/albanileria.jpg"
+          image: "/assets/images/albañil.png"
         },
         {
           id: "instalaciones-gas-electricas",
@@ -281,7 +269,7 @@ export const siteData: SiteData = {
             "Garantía en instalaciones",
             "Asesoramiento técnico profesional"
           ],
-          image: "/assets/images/servicios/gas-electricidad.jpg"
+          image: "/assets/images/instalacion.png"
         },
         {
           id: "instalaciones-agua-cloacas",
@@ -309,7 +297,7 @@ export const siteData: SiteData = {
             "Asesoramiento técnico",
             "Servicio post-instalación"
           ],
-          image: "/assets/images/servicios/agua-cloacas.jpg"
+          image: "/assets/images/cloacas.png"
         },
         {
           id: "colocacion-ceramica",
@@ -579,7 +567,7 @@ export const siteData: SiteData = {
     { text: "Sobre Mí", href: "/sobre-mi" },
     { text: "Servicios", href: "/servicios" },
     { text: "Portfolio", href: "/portfolio" },
-    { text: "Consulta Gratuita", href: "/contacto", isCTA: true }
+    { text: "Consulta Gratuita", href: "https://wa.me/5493511234567", isCTA: true }
   ],
   
   sobreMi: {

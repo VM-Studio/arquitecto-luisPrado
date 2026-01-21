@@ -1,15 +1,17 @@
 'use client'
 
+import { use } from 'react'
 import Link from 'next/link'
 import { siteData, ServiceCategory } from '@/lib/data'
 import { notFound } from 'next/navigation'
 
-export default function CategoriaPage({ params }: { params: { categoria: string } }) {
+export default function CategoriaPage({ params }: { params: Promise<{ categoria: string }> }) {
+  const { categoria } = use(params)
   const { serviceCategories } = siteData
   
   // Encontrar la categoría basada en el slug
   const category = serviceCategories.find(
-    (cat: ServiceCategory) => cat.title.toLowerCase() === params.categoria.toLowerCase()
+    (cat: ServiceCategory) => cat.slug === categoria
   )
 
   if (!category) {
@@ -62,23 +64,6 @@ export default function CategoriaPage({ params }: { params: { categoria: string 
                 </Link>
               ))}
             </div>
-          </div>
-
-          <div className="servicios-page__cta">
-            <h2 className="servicios-page__cta-title">
-              ¿Listo para comenzar tu proyecto?
-            </h2>
-            <p className="servicios-page__cta-description">
-              Contáctame hoy para una consulta gratuita y convirtamos tu visión en realidad. Con más de 25 años de experiencia, te acompañaré en cada paso del camino.
-            </p>
-            <a 
-              href={`https://wa.me/${siteData.contact.whatsapp.replace(/\D/g, '')}`}
-              className="servicios-page__cta-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Solicitar Consulta Gratuita
-            </a>
           </div>
         </div>
       </section>
