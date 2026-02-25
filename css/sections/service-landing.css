@@ -113,6 +113,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.06);
+  transform-origin: center center;
+  transition: transform 0.6s ease;
 }
 
 /* ============ FEATURES SECTION ============ */
@@ -513,4 +516,78 @@
   .service-landing__related-image {
     height: 220px;
   }
+
+  /* ============ CAROUSEL (ampliaciones) ============ */
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel__viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.06);
+    transform-origin: center center;
+    transition: transform 0.6s ease;
+  }
+
+  .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    cursor: pointer;
+  }
+
+  .carousel__arrow--left { left: 12px }
+  .carousel__arrow--right { right: 12px }
+
+  .carousel__arrow svg { color: #1a1a1a }
+
+  .carousel__indicators {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+  }
+
+  .carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    border: none;
+    cursor: pointer;
+  }
+
+  .carousel__dot--active {
+    background: #1a1a1a;
+  }
+
+  /* Ajustes responsivos */
+  @media (min-width: 768px) {
+    .service-landing__hero-image { height: 300px }
+    .carousel__arrow { width: 52px; height: 52px }
+  }
+
 }

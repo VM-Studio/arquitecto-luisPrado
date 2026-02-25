@@ -1,0 +1,228 @@
+/* Minimal, elegant portfolio section - uses existing color variables */
+.portfolio-section {
+  padding: 60px 1rem;
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.portfolio-section__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.portfolio-section__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.portfolio-section__subtitle {
+  color: var(--color-text-light);
+  font-size: 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* separate row and column gaps so we can increase vertical spacing between rows */
+  row-gap: 1.25rem;
+  column-gap: 1rem;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* External label for featured card */
+.portfolio-card__external-label {
+  position: absolute;
+  /* anchor to the top-left corner (tip) of the card */
+  left: -18px;
+  top: -14px;
+  right: auto;
+  background: var(--color-bg);
+  color: var(--color-primary);
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  /* use the same font as the section/titles */
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.98rem;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.09);
+  /* keep the tag horizontal and aligned with the top-right corner */
+  transform-origin: center;
+  -webkit-transform: rotate(0deg) !important;
+  transform: rotate(0deg) !important;
+  z-index: 140; /* ensure it sits above the card */
+  white-space: nowrap;
+}
+
+/* Slightly adjust on small screens so the tag doesn't overflow too much */
+@media (max-width: 640px) {
+  .portfolio-card__external-label {
+    left: -8px;
+    top: -10px;
+      -webkit-transform: rotate(0deg) !important;
+      transform: rotate(0deg) !important;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+    z-index: 160;
+  }
+}
+
+/* More specific: ensure the featured card label is horizontal and positioned on the left tip */
+.portfolio-card--featured .portfolio-card__external-label {
+  left: -18px !important;
+  right: auto !important;
+  top: -14px !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+.portfolio-card__media {
+  display: block;
+  color: inherit;
+}
+
+/* Ensure any carousel placed inside a portfolio card fills the card area (no whitespace) */
+.portfolio-card__carousel,
+.portfolio-card__carousel .carousel__viewport {
+  width: 100%;
+  /* slightly smaller so cards are a bit more compact */
+  height: 300px; /* previously 320px */
+  overflow: hidden;
+}
+
+.portfolio-card__carousel .carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-card--featured {
+  overflow: visible; /* allow external label to be visible outside card bounds */
+}
+
+.portfolio-card--has-external-label {
+  overflow: visible; /* cards with external label should allow the label to overflow */
+}
+
+.portfolio-card--featured .portfolio-card__overlay,
+.portfolio-card--featured .portfolio-card__meta {
+  display: none; /* hide overlay text for featured card (name is external) */
+}
+
+.portfolio-card__media img {
+  width: 100%;
+  /* keep same slightly reduced height as carousels */
+  height: 300px; /* previously 320px */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-card:hover .portfolio-card__media img {
+  transform: scale(1.03);
+}
+
+.portfolio-card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.45) 100%);
+  transition: background 0.3s ease;
+}
+
+/* Ensure featured and regular cards share the same desktop height so all cards match */
+@media (min-width: 1024px) {
+  /* keep the desktop card height consistent across all cards */
+  .portfolio-card__media img,
+  .carousel__image {
+    height: 260px;
+  }
+}
+
+.portfolio-card:hover .portfolio-card__overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0.55) 100%);
+}
+
+.portfolio-card__meta {
+  padding: 1rem 1.25rem;
+  color: #fff;
+}
+
+.portfolio-card__category {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--color-beige);
+  background: rgba(212,184,150,0.12);
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.portfolio-card__year {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* larger vertical spacing between the top and bottom row on tablet */
+    row-gap: 2rem;
+    column-gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* desktop: keep wider vertical separation */
+    row-gap: 2.6rem;
+    column-gap: 1.5rem;
+  }
+  .portfolio-card__media img {
+    height: 260px;
+  }
+}
+
+/* Make carousel arrows inside portfolio cards a bit smaller and ensure they are clickable
+   We increase z-index so overlays don't block them and slightly reduce SVG size. */
+.portfolio-card .carousel__arrow {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  z-index: 220; /* ensure arrows sit above overlays */
+}
+
+.portfolio-card .carousel__arrow svg {
+  width: 14px;
+  height: 14px;
+}
+
+.portfolio-card .carousel__arrow--left { left: 8px }
+.portfolio-card .carousel__arrow--right { right: 8px }

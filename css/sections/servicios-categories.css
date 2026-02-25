@@ -3,14 +3,38 @@
    =============================================== */
 
 .servicios-categories {
-  padding: 100px 1rem 3rem;
+  /* Make the section compact: less vertical space and not full-height
+     Increase top padding slightly so the section sits a bit farther from the hero. */
+  /* slightly closer to the hero above */
+  padding: 64px 1rem 24px;
   background: #ffffff;
-  min-height: 100vh;
+  min-height: auto;
+  position: relative; /* required for the decorative background pseudo-element */
+}
+
+/* Decorative background image (very low opacity) to give subtle movement behind the services */
+.servicios-categories::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* cover the section */
+  background-image: url('/assets/images/albañil.png');
+  background-repeat: no-repeat;
+  /* make the decorative image cover the whole section */
+  background-position: center center;
+  background-size: cover; /* ensure it fills the entire section */
+  /* slightly more visible than before so the drawing reads better */
+  opacity: 0.12; /* previously 0.06 */
+  pointer-events: none; /* don't block interactions */
+  z-index: 0;
+  filter: saturate(0.9) contrast(0.95);
 }
 
 .servicios-categories__container {
-  max-width: 800px;
+  /* Narrower container so the section appears more compact */
+  max-width: 720px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1; /* ensure content sits above the decorative background */
 }
 
 .servicios-categories__header {
@@ -19,13 +43,14 @@
 }
 
 .servicios-categories__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.75rem;
-  font-weight: 500;
+  font-family: 'Playfair Display', Georgia, serif;
+  /* Larger heading to make 'Nuestros servicios' more prominent */
+  font-size: clamp(2.5rem, 7.5vw, 5.5rem);
+  font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 0;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .servicios-categories__grid {
@@ -225,12 +250,14 @@
 
 /* Responsive */
 @media (min-width: 768px) {
+  /* Tablet: slightly larger but still compact */
   .servicios-categories {
-    padding: 120px 2rem 4rem;
+    /* Keep the increased gap on tablet/desktop as well, but slightly reduced */
+    padding: 84px 2rem 32px;
   }
 
   .servicios-categories__container {
-    max-width: 900px;
+    max-width: 820px;
   }
 
   .servicios-categories__header {
@@ -238,12 +265,13 @@
   }
 
   .servicios-categories__title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .servicios-categories__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    /* Increase horizontal space between the two category cards */
+    gap: 3rem;
   }
 
   .servicios-categories__card {

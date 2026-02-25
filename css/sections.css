@@ -5,15 +5,13 @@
 /* =============== HERO SECTION =============== */
 .hero {
     min-height: 50vh;
-    display: flex;
-    align-items: center;
+    display: block;
     position: relative;
-    padding: 120px 1rem 3rem;
+    /* Increased top padding so there's more space under the fixed navbar
+       Mobile default: 80px */
+    padding: 80px 1rem 3rem;
     overflow: hidden;
-    background-image: url('/assets/images/hero.png');
-    background-size: auto 70%;
-    background-position: right center;
-    background-repeat: no-repeat;
+    background: none;
 }
 
 .hero__background {
@@ -30,15 +28,29 @@
     width: 100%;
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.hero__content {
-    max-width: 100%;
-    background: rgba(26, 26, 26, 0.85);
-    padding: 2rem 1.5rem;
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    text-align: center;
+.hero__left {
+    padding: 0 1rem;
+}
+
+.hero__right {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__right-image {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0; /* made square per request */
 }
 
 .hero__title {
@@ -47,13 +59,13 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: var(--color-bg);
+    color: #1a1a1a;
     letter-spacing: -0.02em;
 }
 
 .hero__description {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #444;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -79,14 +91,6 @@
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(212, 184, 150, 0.4);
-}
-
-.hero__image {
-    display: none;
-}
-
-.hero__image img {
-    display: none;
 }
 
 /* =============== ABOUT SECTION =============== */
@@ -125,7 +129,7 @@
 
 .about__image {
     position: relative;
-    border-radius: 8px;
+    border-radius: 0; /* square corners per request */
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     order: 2;
@@ -142,7 +146,7 @@
     position: relative;
     width: 100%;
     height: 280px;
-    border-radius: 8px;
+    border-radius: 0; /* square corners for the about carousel */
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
@@ -379,7 +383,9 @@
 
 .cta__badge {
     display: inline-block;
-    background-color: var(--color-accent);
+    /* Use a slightly more transparent, lighter tone of the accent color so
+       the "Consulta Gratuita" badge appears softer but keeps the same hue. */
+    background-color: rgba(212, 184, 150, 0.85); /* was var(--color-accent) */
     color: var(--color-primary);
     padding: 0.75rem 2rem;
     border-radius: 0;
@@ -599,7 +605,8 @@
 
 .contact__title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    /* make slightly smaller per request */
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
     font-weight: var(--font-weight-bold);
     margin-bottom: 0;
     color: var(--color-primary);
@@ -728,7 +735,8 @@
     .hero {
         background-size: auto 70%;
         background-position: right center;
-        padding: 5rem 2rem 3rem;
+        /* Keep extra top spacing under the fixed navbar on tablet */
+        padding: 100px 2rem 3rem;
     }
     
     .hero__content {
@@ -824,6 +832,11 @@
 @media screen and (min-width: 1024px) {
     .hero {
         min-height: 45vh;
+        /* Ensure desktop uses the larger background image size */
+        background-size: auto 110%;
+        background-position: right center;
+        /* Add extra top spacing for desktop */
+        padding: 160px 2rem 3rem;
     }
     
     .about {
@@ -841,6 +854,21 @@
     
     .service-card__image {
         height: 260px;
+    }
+}
+/* Stack hero columns on small screens */
+@media (max-width: 767px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero__right-image {
+        max-height: 360px;
+    }
+
+    .hero__left {
+        text-align: center;
     }
 }
 /* =============== MOBILE OPTIMIZATIONS =============== */

@@ -106,11 +106,7 @@ export default function Footer() {
                   Servicios
                 </Link>
               </li>
-              <li>
-                <Link href="/portfolio" className="footer__link">
-                  Portfolio
-                </Link>
-              </li>
+              {/* Portfolio page removed */}
               <li>
                 <Link href="/contacto" className="footer__link">
                   Contacto

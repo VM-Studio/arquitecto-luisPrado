@@ -2,6 +2,7 @@ import { use } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { siteData, ServiceDetail } from '@/lib/data'
+import ImageCarousel from '@/components/ImageCarousel'
 import { Metadata } from 'next'
 
 interface PageProps {
@@ -116,7 +117,63 @@ export default function ServiceLandingPage({ params }: PageProps) {
             </a>
           </div>
           <div className="service-landing__hero-image">
-            <img src={service.image} alt={service.heroTitle} />
+            {/* Mostrar carousel para páginas específicas (ampliaciones u obras) */}
+            {slug === 'ampliaciones' ? (
+              <ImageCarousel images={[
+                '/assets/images/ampliacion1.png',
+                '/assets/images/ampliacion2.png',
+                '/assets/images/ampliacion3.png',
+                '/assets/images/ampliacion4.png',
+                '/assets/images/ampliacion5.png',
+                '/assets/images/ampliacion6.png',
+                '/assets/images/ampliacion7.png'
+              ]} />
+            ) : slug === 'proyectos-vivienda-locales-comerciales' ? (
+              <ImageCarousel images={[
+                '/assets/images/obra1.png',
+                '/assets/images/obra2.png',
+                '/assets/images/obra3.png',
+                '/assets/images/obra4.png',
+                '/assets/images/obra5.png',
+                '/assets/images/obra6.png',
+                '/assets/images/obra7.png',
+                '/assets/images/obra8.png',
+                '/assets/images/obra9.png',
+                '/assets/images/obra10.png',
+                '/assets/images/obra11.png',
+                '/assets/images/obra12.png',
+                '/assets/images/obra13.png',
+                '/assets/images/obra14.png'
+              ]} />
+            ) : slug === 'refacciones' ? (
+              <ImageCarousel images={[
+                '/assets/images/refraccion1.png',
+                '/assets/images/refraccion2.png',
+                '/assets/images/refraccion3.png',
+                '/assets/images/refraccion4.png',
+                '/assets/images/refraccion5.png',
+                '/assets/images/refraccion6.png',
+                '/assets/images/refraccion7.png',
+                '/assets/images/refraccion8.png',
+                '/assets/images/refraccion9.png',
+                '/assets/images/refraccion10.png'
+              ]} />
+            ) : slug === 'pintura' ? (
+              <ImageCarousel images={[
+                '/assets/images/pintura1.png',
+                '/assets/images/pintura2.png',
+                '/assets/images/pintura3.png',
+                '/assets/images/pintura4.png',
+                '/assets/images/pintura5.png',
+                '/assets/images/pintura6.png',
+                '/assets/images/pintura7.png',
+                '/assets/images/pintura8.png',
+                '/assets/images/pintura9.png',
+                '/assets/images/pintura10.png'
+              ]} />
+            ) : (
+              <img src={service.image} alt={service.heroTitle} />
+            )}
           </div>
         </div>
       </section>

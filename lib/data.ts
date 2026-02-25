@@ -269,7 +269,7 @@ export const siteData: SiteData = {
             "Garantía en instalaciones",
             "Asesoramiento técnico profesional"
           ],
-          image: "/assets/images/instalacion.png"
+          image: "/assets/images/instalaciongas.png"
         },
         {
           id: "instalaciones-agua-cloacas",
@@ -446,7 +446,7 @@ export const siteData: SiteData = {
             "Optimización de espacios",
             "Cumplimiento normativas"
           ],
-          image: "/assets/images/servicios/proyectos.jpg"
+          image: "/assets/images/obra1.png"
         },
         {
           id: "ampliaciones",
@@ -474,7 +474,7 @@ export const siteData: SiteData = {
             "Diseño funcional",
             "Asesoramiento profesional"
           ],
-          image: "/assets/images/servicios/ampliaciones.jpg"
+          image: "/assets/images/ampliacion1.png"
         },
         {
           id: "refacciones",
@@ -502,35 +502,35 @@ export const siteData: SiteData = {
             "Gestión profesional",
             "Garantía en trabajos"
           ],
-          image: "/assets/images/servicios/refacciones.jpg"
+          image: "/assets/images/refraccion1.png"
         },
         {
-          id: "relevamiento",
-          name: "Relevamiento",
-          slug: "relevamiento",
-          title: "Relevamiento de Propiedades en Córdoba",
-          metaTitle: "Relevamiento de Propiedades - Luis Prado Arquitecto | Córdoba",
-          metaDescription: "Servicios de relevamiento de propiedades en Córdoba. Documentación técnica precisa y profesional.",
-          heroTitle: "Relevamiento",
-          heroDescription: "Documentación técnica precisa de tu propiedad",
+          id: "pintura",
+          name: "Pintura",
+          slug: "pintura",
+          title: "Pintura y Terminaciones en Córdoba",
+          metaTitle: "Pintura Profesional - Luis Prado Arquitecto | Córdoba",
+          metaDescription: "Servicios integrales de pintura interior y exterior en Córdoba. Acabados profesionales y garantía en terminaciones.",
+          heroTitle: "Pintura",
+          heroDescription: "Renová tus espacios con acabados profesionales",
           category: "arquitectura",
           features: [
-            "Medición en sitio",
-            "Planos de relevamiento",
-            "Documentación fotográfica",
-            "Estado de estructuras",
-            "Informe técnico",
-            "Planos digitales (CAD)"
+            "Preparación de superficies y reparación de fisuras",
+            "Imprimaciones y selladores",
+            "Pintura interior y exterior",
+            "Esmaltados y acabados especiales",
+            "Tratamientos antihumedad y antihongo",
+            "Asesoramiento en colores y texturas"
           ],
           benefits: [
-            "Precisión garantizada",
-            "Documentación completa",
-            "Entrega digital e impresa",
-            "Asesoramiento técnico",
-            "Base para futuros proyectos",
-            "Servicio rápido y eficiente"
+            "Acabados duraderos y profesionales",
+            "Colores y combinaciones a medida",
+            "Equipo especializado y limpio",
+            "Cumplimiento de plazos",
+            "Garantía en mano de obra",
+            "Presupuesto detallado"
           ],
-          image: "/assets/images/servicios/relevamiento.jpg"
+          image: "/assets/images/pintura1.png"
         }
       ]
     }
@@ -566,7 +566,7 @@ export const siteData: SiteData = {
     { text: "Inicio", href: "/" },
     { text: "Sobre Mí", href: "/sobre-mi" },
     { text: "Servicios", href: "/servicios" },
-    { text: "Portfolio", href: "/portfolio" },
+    { text: "Portafolio", href: "/#portafolio" },
     { text: "Consulta Gratuita", href: "https://wa.me/5493511234567", isCTA: true }
   ],
   

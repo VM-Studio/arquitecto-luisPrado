@@ -9,11 +9,18 @@ export default function About() {
   const [currentImage, setCurrentImage] = useState(0)
   
   const images = [
-    '/assets/images/p1.png',
-    '/assets/images/p2.png',
-    '/assets/images/p3.png',
-    '/assets/images/p4.png',
-    '/assets/images/p5.png'
+    '/assets/images/casa1.png',
+    '/assets/images/casa2.png',
+    '/assets/images/casa3.png',
+    '/assets/images/casa4.png',
+    '/assets/images/casa5.png',
+    '/assets/images/casa6.png',
+    '/assets/images/casa7.png',
+    '/assets/images/casa8.png',
+    '/assets/images/casa9.png',
+    '/assets/images/casa10.png',
+    '/assets/images/casa11.png',
+    '/assets/images/casa12.png'
   ]
 
   const nextImage = () => {

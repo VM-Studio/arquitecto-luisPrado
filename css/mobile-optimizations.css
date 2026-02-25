@@ -180,6 +180,131 @@ textarea {
     }
 }
 
+/* Additional responsive adjustments to ensure uniform adaptation across the site
+     These rules are non-invasive (no visual redesign) and only tweak spacing, image
+     heights and grid columns so components behave correctly on small/medium screens. */
+
+/* Mobile (phones) */
+@media (max-width: 639px) {
+    :root {
+        --container-padding: 1rem;
+        --container-width: 100%;
+    }
+
+    html, body {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Ensure main containers don't overflow and have consistent padding */
+    .portfolio-section__container,
+    .servicios-categories__container,
+    .about__container,
+    .service-landing__container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: calc(100% - 2rem);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Collapse grids to single column on small phones */
+    .portfolio-grid,
+    .servicios-categories__grid,
+    .services__grid,
+    .about__grid {
+        grid-template-columns: 1fr !important;
+        row-gap: 1.25rem !important;
+    }
+
+    /* Slightly smaller and consistent card heights for touch devices */
+    .portfolio-card__carousel,
+    .portfolio-card__carousel .carousel__viewport,
+    .portfolio-card__media img,
+    .carousel__image {
+        height: 220px !important;
+    }
+
+    /* Hero and service landing images smaller on phones */
+    .service-landing__hero-image,
+    .hero__image,
+    .about__image {
+        height: 220px !important;
+        object-fit: cover;
+    }
+
+    /* Reduce arrow sizes on small screens and increase tappable area */
+    .carousel__arrow {
+        width: 36px !important;
+        height: 36px !important;
+        padding: 6px !important;
+    }
+
+    .carousel__arrow svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    /* Make labels and texts wrap to avoid overflow */
+    .portfolio-card__external-label,
+    .portfolio-card__title,
+    .servicios-categories__title {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    /* Touch optimizations */
+    .carousel__arrow,
+    .carousel__dot {
+        touch-action: manipulation;
+    }
+}
+
+/* Tablet (small/medium) */
+@media (min-width: 640px) and (max-width: 1023px) {
+    :root {
+        --container-padding: 1.25rem;
+        --container-width: 920px;
+    }
+
+    .portfolio-grid,
+    .servicios-categories__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        row-gap: 1.75rem;
+    }
+
+    .portfolio-card__carousel,
+    .portfolio-card__carousel .carousel__viewport,
+    .portfolio-card__media img,
+    .carousel__image {
+        height: 260px !important;
+    }
+
+    .carousel__arrow {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* Desktop tweaks (ensure consistent heights set earlier are respected) */
+@media (min-width: 1024px) {
+    :root {
+        --container-padding: 1.5rem;
+        --container-width: 1280px;
+    }
+
+    /* Keep desktop card heights consistent but allow slightly more breathing room */
+    .portfolio-card__media img,
+    .carousel__image {
+        height: 260px !important;
+    }
+
+    /* Increase hit area of arrows on large screens without changing visual size */
+    .carousel__arrow {
+        padding: 10px !important;
+    }
+}
+
+
 /* Touch-friendly spacing */
 @media (max-width: 768px) {
     .nav__list {
