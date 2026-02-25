@@ -244,12 +244,72 @@ textarea {
         height: 14px !important;
     }
 
+    /* Make carousel arrows clearly visible and tappable on phones:
+       use a darker translucent background and white icon for contrast,
+       increase z-index and ensure pointer-events are enabled. */
+    .carousel__arrow {
+        background: rgba(0,0,0,0.45) !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+        z-index: 9999 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        pointer-events: auto !important;
+    }
+
+    .carousel__arrow svg {
+        color: #ffffff !important;
+    }
+
+    /* Make dots more visible on mobile */
+    .carousel__indicators {
+        bottom: 10px !important;
+    }
+    .carousel__dot {
+        background: rgba(255,255,255,0.9) !important;
+        width: 10px !important;
+        height: 10px !important;
+    }
+
     /* Make labels and texts wrap to avoid overflow */
     .portfolio-card__external-label,
     .portfolio-card__title,
     .servicios-categories__title {
         white-space: normal;
         word-break: break-word;
+    }
+
+    /* HERO typography adjustments specifically for phones:
+       Make the main hero title more prominent and the description much smaller
+       so the hierarchy is clear on narrow screens as requested. */
+    .hero__title {
+        font-size: 2.4rem !important; /* slightly larger for better presence */
+        line-height: 1.06 !important;
+    }
+
+    .hero__description {
+        font-size: 0.85rem !important; /* much smaller subtitle on mobile */
+        line-height: 1.4 !important;
+        color: var(--color-text-light) !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* ABOUT section typography on phones: emphasize the section title and de-emphasize the body text */
+    .about__title {
+        font-size: 2.4rem !important; /* larger title for presence on mobile */
+        line-height: 1.06 !important;
+    }
+
+    .about__description {
+        font-size: 0.82rem !important; /* much smaller description for clear hierarchy */
+        line-height: 1.45 !important;
+        color: var(--color-text-light) !important;
+    }
+
+    /* Make the Portfolio section title more prominent on phones */
+    .portfolio-section__title {
+        font-size: 2.0rem !important; /* larger and more visible on mobile */
+        line-height: 1.06 !important;
     }
 
     /* Touch optimizations */

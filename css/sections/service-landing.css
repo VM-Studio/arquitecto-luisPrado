@@ -104,6 +104,7 @@
 .service-landing__hero-image {
   width: 100%;
   height: 240px;
+  min-height: 220px; /* ensure a reasonable minimum on small screens */
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -116,6 +117,26 @@
   transform: scale(1.06);
   transform-origin: center center;
   transition: transform 0.6s ease;
+}
+
+/* Ensure carousel images placed inside the service hero also fill the area */
+.service-landing__hero-image .carousel__image,
+.service-landing__hero-image .carousel__viewport {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px !important;
+  object-fit: cover !important;
+}
+
+@media (min-width: 1024px) {
+  .service-landing__hero-image {
+    height: 320px; /* larger hero media on desktop */
+    min-height: 260px;
+  }
+  .service-landing__hero-image .carousel__image,
+  .service-landing__hero-image .carousel__viewport {
+    min-height: 260px !important;
+  }
 }
 
 /* ============ FEATURES SECTION ============ */

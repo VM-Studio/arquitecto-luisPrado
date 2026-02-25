@@ -320,26 +320,38 @@
   }
 }
 
+/* Ultra-small phones: make the section title slightly smaller so "Nuestros servicios"
+   can fit in a single line without changing tablet/desktop sizes. */
+@media (max-width: 420px) {
+  .servicios-categories__title {
+    font-size: 2.0rem; /* reduce so the full title fits in one row */
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+}
+
 /* Mobile-specific: ensure title is noticeably larger than subtitle on phones
    without looking grotesque. This increases hierarchy only on small screens. */
 @media (max-width: 639px) {
+  /* Keep the main title at or below its original minimum so we DON'T enlarge it on phones */
   .servicios-categories__title {
-    font-size: 2.6rem; /* larger, but balanced for phones */
-    line-height: 1.05;
+    font-size: 2.5rem; /* match the original clamp minimum */
+    line-height: 1.06;
     margin-bottom: 0.3rem;
   }
 
-  /* If there's a paragraph/subtitle directly under the header, make it smaller
-     so the title has visual dominance. Use a conservative size to avoid crowding. */
+  /* Make subtitles significantly smaller on mobile so the title reads as the clear hero.
+     This reduces visual competition without changing the title size. */
   .servicios-categories__header p,
   .servicios-categories__subtitle {
-    font-size: 1rem;
+    font-size: 0.85rem; /* notably smaller on phones */
     color: var(--color-text-light);
-    margin-top: 0.25rem;
-    line-height: 1.4;
+    margin-top: 0.15rem;
+    line-height: 1.35;
+    opacity: 0.95;
   }
 
-  /* Ensure card titles remain readable but smaller than the main section title */
+  /* Keep card titles readable but don't change their relation to the section title */
   .servicios-categories__card-title {
     font-size: 1.125rem;
   }
