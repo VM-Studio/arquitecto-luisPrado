@@ -144,3 +144,38 @@
         text-align: center;
     }
 }
+
+/* Reduce navbar size specifically on small phones */
+@media screen and (max-width: 639px) {
+    .nav {
+        padding: 0.5rem 0; /* smaller vertical padding */
+        box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+
+    .nav__container {
+        padding: 0 0.75rem; /* reduce side padding for narrow screens */
+    }
+
+    .nav__logo img {
+        height: 36px; /* smaller logo on phones */
+    }
+
+    .nav__link {
+        font-size: 0.85rem; /* slightly smaller link text */
+    }
+
+    .nav__link--cta {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.8rem;
+    }
+
+    .nav__toggle span {
+        width: 20px;
+        height: 2px;
+    }
+
+    /* Ensure the toggle button remains comfortably tappable */
+    .nav__toggle {
+        padding: 6px;
+    }
+}

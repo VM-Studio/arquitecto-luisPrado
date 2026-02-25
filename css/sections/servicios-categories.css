@@ -319,3 +319,28 @@
     font-size: 1.75rem;
   }
 }
+
+/* Mobile-specific: ensure title is noticeably larger than subtitle on phones
+   without looking grotesque. This increases hierarchy only on small screens. */
+@media (max-width: 639px) {
+  .servicios-categories__title {
+    font-size: 2.6rem; /* larger, but balanced for phones */
+    line-height: 1.05;
+    margin-bottom: 0.3rem;
+  }
+
+  /* If there's a paragraph/subtitle directly under the header, make it smaller
+     so the title has visual dominance. Use a conservative size to avoid crowding. */
+  .servicios-categories__header p,
+  .servicios-categories__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+  }
+
+  /* Ensure card titles remain readable but smaller than the main section title */
+  .servicios-categories__card-title {
+    font-size: 1.125rem;
+  }
+}
