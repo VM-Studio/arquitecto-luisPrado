@@ -174,6 +174,9 @@
     background: #f5f5f5;
     border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .servicios-page__service-image::after {
@@ -185,6 +188,103 @@
     height: 100%;
     object-fit: cover;
     transition: none;
+    object-position: center;
+}
+
+.servicios-page__service-image .carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicios-page__service-image .carousel__viewport {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicios-page__service-image .carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
+.servicios-page__service-image .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+.servicios-page__service-image .carousel__arrow:hover {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.servicios-page__service-image .carousel__arrow svg {
+    color: #ffffff;
+    width: 16px;
+    height: 16px;
+}
+
+.servicios-page__service-image .carousel__arrow--left {
+    left: 8px;
+}
+
+.servicios-page__service-image .carousel__arrow--right {
+    right: 8px;
+}
+
+.servicios-page__service-image .carousel__indicators {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.servicios-page__service-image .carousel__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.servicios-page__service-image .carousel__dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.servicios-page__service-image .carousel__dot--active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.3);
 }
 
 .servicios-page__service-card:hover .servicios-page__service-image img {
@@ -353,6 +453,27 @@
         height: 200px;
     }
 
+    .servicios-page__service-image .carousel__arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .servicios-page__service-image .carousel__arrow svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .servicios-page__service-image .carousel__indicators {
+        bottom: 8px;
+        padding: 6px 10px;
+        gap: 4px;
+    }
+
+    .servicios-page__service-image .carousel__dot {
+        width: 8px;
+        height: 8px;
+    }
+
     .servicios-page__service-content {
         padding: 24px;
     }
@@ -376,6 +497,33 @@
 
     .servicios-page__service-title {
         font-size: 1.25rem;
+    }
+
+    .servicios-page__service-image {
+        height: 180px;
+    }
+
+    .servicios-page__service-image .carousel__arrow {
+        width: 30px;
+        height: 30px;
+        left: 6px !important;
+        right: 6px !important;
+    }
+
+    .servicios-page__service-image .carousel__arrow svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .servicios-page__service-image .carousel__indicators {
+        bottom: 6px;
+        padding: 4px 8px;
+        gap: 3px;
+    }
+
+    .servicios-page__service-image .carousel__dot {
+        width: 6px;
+        height: 6px;
     }
 
     .servicios-page__cta {

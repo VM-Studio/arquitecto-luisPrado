@@ -12,13 +12,7 @@ export default function Navbar() {
     <nav className="nav">
       <div className="nav__container">
         <Link href="/" className="nav__logo">
-          <Image 
-            src="/assets/images/luislogo.png" 
-            alt="Luis Prado Arquitecto" 
-            width={150} 
-            height={50}
-            priority
-          />
+          <span className="nav__logo-text">Constru/Arq</span>
         </Link>
 
         <button

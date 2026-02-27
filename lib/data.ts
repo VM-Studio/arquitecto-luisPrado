@@ -87,6 +87,7 @@ export interface ServiceDetail {
   features: string[];
   benefits: string[];
   image: string;
+  carouselImages?: string[];
 }
 
 export interface CTA {
@@ -325,7 +326,10 @@ export const siteData: SiteData = {
             "Limpieza final incluida",
             "Garantía en colocación"
           ],
-          image: "/assets/images/servicios/ceramica.jpg"
+          image: "/assets/images/colocacioncera.png",
+          carouselImages: [
+            "/assets/images/colocacioncera.png"
+          ]
         },
         {
           id: "calefaccion-losa-radiante",
@@ -353,7 +357,11 @@ export const siteData: SiteData = {
             "Asesoramiento técnico",
             "Garantía en instalación"
           ],
-          image: "/assets/images/servicios/calefaccion.jpg"
+          image: "/assets/images/losard1.png",
+          carouselImages: [
+            "/assets/images/losard1.png",
+            "/assets/images/losarad2.png"
+          ]
         },
         {
           id: "estructuras-metalicas",
@@ -381,7 +389,11 @@ export const siteData: SiteData = {
             "Garantía estructural",
             "Cumplimiento de plazos"
           ],
-          image: "/assets/images/servicios/estructuras.jpg"
+          image: "/assets/images/techo1.png",
+          carouselImages: [
+            "/assets/images/techo1.png",
+            "/assets/images/techo2.png"
+          ]
         },
         {
           id: "durlock",
@@ -409,7 +421,11 @@ export const siteData: SiteData = {
             "Personal capacitado",
             "Garantía en instalación"
           ],
-          image: "/assets/images/servicios/durlock.jpg"
+          image: "/assets/images/durlock1.png",
+          carouselImages: [
+            "/assets/images/durlock1.png",
+            "/assets/images/durlock2.png"
+          ]
         }
       ]
     },

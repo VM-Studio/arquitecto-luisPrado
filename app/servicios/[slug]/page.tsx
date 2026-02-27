@@ -171,6 +171,15 @@ export default function ServiceLandingPage({ params }: PageProps) {
                 '/assets/images/pintura9.png',
                 '/assets/images/pintura10.png'
               ]} />
+            ) : slug === 'calefaccion-losa-radiante-radiadores' ? (
+              <ImageCarousel images={[
+                '/assets/images/losarad1.png',
+                '/assets/images/losarad2.png'
+              ]} />
+            ) : slug === 'colocacion-ceramica' ? (
+              <ImageCarousel images={[
+                '/assets/images/colocacioncera.png'
+              ]} />
             ) : (
               <img src={service.image} alt={service.heroTitle} />
             )}

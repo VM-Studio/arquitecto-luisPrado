@@ -27,6 +27,21 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.nav__logo:hover {
+    opacity: 0.85;
+}
+
+.nav__logo-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-accent);
 }
 
 .nav__logo img {
@@ -46,11 +61,12 @@
 }
 
 .nav__link {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-regular);
     font-size: 0.9375rem;
     color: var(--color-text);
     transition: var(--transition);
     position: relative;
+    font-family: var(--font-primary);
 }
 
 .nav__link::after {
@@ -127,6 +143,8 @@
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
         padding: var(--spacing-2xl) var(--spacing-lg);
         transition: right 0.3s ease;
+        z-index: 999; /* ensure menu sits just below navbar but above all other content */
+        overflow-y: auto;
     }
 
     .nav__menu.show {
@@ -156,6 +174,11 @@
         padding: 0 0.75rem; /* reduce side padding for narrow screens */
     }
 
+    .nav__logo-text {
+        font-size: 1.1rem; /* slightly smaller text on phones */
+        font-weight: 700;
+    }
+
     .nav__logo img {
         height: 36px; /* smaller logo on phones */
     }
@@ -175,6 +198,14 @@
     }
 
     /* Ensure the toggle button remains comfortably tappable */
+    .nav__toggle {
+        position: relative;
+        z-index: 1001;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+        pointer-events: auto;
+    }
     .nav__toggle {
         padding: 6px;
     }

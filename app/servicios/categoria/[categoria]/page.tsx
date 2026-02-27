@@ -4,6 +4,7 @@ import { use } from 'react'
 import Link from 'next/link'
 import { siteData, ServiceCategory } from '@/lib/data'
 import { notFound } from 'next/navigation'
+import ImageCarousel from '@/components/ImageCarousel'
 
 export default function CategoriaPage({ params }: { params: Promise<{ categoria: string }> }) {
   const { categoria } = use(params)
@@ -48,10 +49,14 @@ export default function CategoriaPage({ params }: { params: Promise<{ categoria:
                   className="servicios-page__service-card"
                 >
                   <div className="servicios-page__service-image">
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                    />
+                    {service.carouselImages && service.carouselImages.length > 0 ? (
+                      <ImageCarousel images={service.carouselImages} />
+                    ) : (
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                      />
+                    )}
                   </div>
                   <div className="servicios-page__service-content">
                     <h3 className="servicios-page__service-title">
